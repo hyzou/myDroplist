@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="drop.js" type="text/javascript" charset="utf-8"></script>	
+		<style type="text/css">
+			.zhydropdown{
+				position: relative;
+				display: block;
+				min-height: 20px;
+				min-width: 40px;
+				line-height: 20px;
+				border: 1px solid #ccc;
+				cursor: pointer;
+			}
+			.zhydropdown .dropdownBox{
+				position: absolute;
+				top: 20px;
+				left: 0;
+				z-index: 999;
+				display: block;
+				min-height: 80px;
+				width: 100%;
+				line-height: 20px;
+				border: 1px solid red;
+				cursor: pointer;
+			}
+			.zhydropHolder{
+				cursor: pointer;
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 999;
+				width: 100%;
+				height: 100%;
+				border: none;
+				outline: none;
+			}
+			.zhydropHide{
+				display: none !important;
+			}
+			#myDrop{
+				width: 200px;
+				height: 40px;
+				line-height: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="myDrop"></div>
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var data = {
+				/*title: 'mydrop', //droplist主标题
+				ajaxUrls: 'http://10.1.3.221:1000/api/tableDatalist,http://10.1.3.221:1000/api/tableDatalist', //droplist获取接口下拉表数据需用到的接口地址，需按顺序填写，用“,”连接，e.g. a,b,c
+				ajaxMethods: 'get', //droplist接口对行请求方式，与ajaxUrls严格一一对应或者统一请求方式，e.g.["post","get"]/"post"
+				ajaxCompNames: ["province","city"], //droplist下拉控件的name属性值，与ajaxUrls必须严格一一对应，e.g.["a","b"]
+				ajaxPramas: ["","province"], //droplist接口请求参数名，与ajaxUrls必须严格一一对应（如果第一个接口不需要参数需传空），e.g.["","a","b"]
+				keyword: 'id', //droplist下拉表点击条目，需获取的关键字，e.g. id
+				value: 'province', //droplist下拉表点击条目展示用的文字， e.g. value
+				order: 'id', //droplist下拉表可能需要展示的另一个文字，如编号等
+				successKey: 'code', //droplist下拉表接口请求成功标志，e.g. code:0 code
+				successCode: '0', //droplist下拉表接口请求成功标志，e.g. code:0 0
+				successData: 'data', //droplist下拉表接口请求成功标志，e.g. data*/
+				'title': '我的',
+				'keyword': 'id',
+				'value': 'value',
+				//'order': 'key',
+				'data': {
+					'one': [{
+						'key': '001',
+						'value': '北京北京北京北京',
+						'id': '001'
+					},{
+						'key': '002',
+						'value': '天津',
+						'id': '002'
+					}],
+					'two': [{
+						'key': '002',
+						'value': '天津',
+						'id': '002'
+					},{
+						'key': '001',
+						'value': '北京',
+						'id': '001'
+					}],
+					'three': [{
+						'key': '002',
+						'value': '天津',
+						'id': '002'
+					},{
+						'key': '001',
+						'value': '北京',
+						'id': '001'
+					}],
+					'four': [{
+						'key': '002',
+						'value': '天津',
+						'id': '002'
+					},{
+						'key': '001',
+						'value': '北京',
+						'id': '001'
+					}]
+				}
+			}
+			$("#myDrop").drop(data);
+		})
+	</script>
+</html>
